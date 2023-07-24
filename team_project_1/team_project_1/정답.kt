@@ -1,7 +1,6 @@
 fun main() {
     val burgerMenu = BurgerMenu()
     val custardMenu = ForzenCustardMenu()
-
     var selectedMenu: Int
 
     while (true) {
