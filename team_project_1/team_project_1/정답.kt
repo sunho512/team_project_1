@@ -1,4 +1,7 @@
 fun main() {
+    val burgerMenu = BurgerMenu()
+    val custardMenu = ForzenCustardMenu()
+
     var selectedMenu: Int
 
     while (true) {
@@ -18,13 +21,7 @@ fun main() {
                 break
             }
             1 -> {
-                println("[ Burgers MENU ]")
-                println("1. ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거")
-                println("2. SmokeShack    | W 8.9 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거")
-                println("3. Shroom Burger | W 9.4 | 몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거")
-                println("3. Cheeseburger  | W 6.9 | 포테이토 번과 비프패티, 치즈가 토핑된 치즈버거")
-                println("4. Hamburger     | W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거")
-                println("0. 뒤로가기      | 뒤로가기")
+                burgerMenu.showMenu()
 
                 var selectedBurger: Int
                 while (true) {
@@ -34,7 +31,7 @@ fun main() {
                     when (selectedBurger) {
                         0 -> break
                         in 1..4 -> {
-                            println("선택한 버거 메뉴: $selectedBurger")
+                            println("${burgerMenu.menuMap[selectedBurger]}을(를) 선택하셨습니다.")
                             // 여기에서 선택한 버거 메뉴에 대한 처리를 추가할 수 있습니다.
                         }
                         else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
@@ -42,8 +39,22 @@ fun main() {
                 }
             }
             2 -> {
-                println("Forzen Custard 메뉴를 선택했습니다.")
-                // Forzen Custard 메뉴에 대한 처리를 추가할 수 있습니다.
+                custardMenu.showMenu()
+
+                var selectedCustard: Int
+                while (true) {
+                    print("메뉴를 선택해주세요: ")
+                    selectedCustard = readLine()?.toIntOrNull() ?: -1
+
+                    when (selectedCustard) {
+                        0 -> break
+                        in 1..4 -> {
+                            println("${custardMenu.custardMap[selectedCustard]}을(를) 선택하셨습니다.")
+                            // 여기에서 선택한 커스타드 메뉴에 대한 처리를 추가할 수 있습니다.
+                        }
+                        else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
+                    }
+                }
             }
             3 -> {
                 println("Drinks 메뉴를 선택했습니다.")
