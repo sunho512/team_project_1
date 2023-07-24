@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="메뉴를 선택하세요:"
+android:textSize="18sp"
+android:textStyle="bold" />
+
+<RadioGroup
+android:id="@+id/menuRadioGroup"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+
+<RadioButton
+android:id="@+id/radioBurger"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="햄버거" />
+
+<RadioButton
+android:id="@+id/radioPizza"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="피자" />
+
+<RadioButton
+android:id="@+id/radioPasta"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="파스타" />
+</RadioGroup>
+
+<Button
+android:id="@+id/orderButton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="주문 확인"
+android:textSize="16sp" />
+
+<TextView
+android:id="@+id/orderResultText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="16dp"
+android:text=""
+android:textSize="16sp" />
+</LinearLayout>
