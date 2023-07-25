@@ -23,7 +23,7 @@ class ForzenCustardMenu {
         1 to "Shack",
         2 to "Shack of the week",
         3 to "Red bean shack",
-        4 to "Froot"
+        4 to "Floats"
     )
 
     fun showMenu(): Unit {
@@ -31,7 +31,7 @@ class ForzenCustardMenu {
         println("1. Shack             | W 5.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거")
         println("2. Shack of the week | W 6.5 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거")
         println("3. Red been shack    | W 6.5 | 몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거")
-        println("3. Floot             | W 5.9 | 포테이토 번과 비프패티, 치즈가 토핑된 치즈버거")
+        println("3. Floats             | W 5.9 | 포테이토 번과 비프패티, 치즈가 토핑된 치즈버거")
         println("0. 뒤로가기           | 뒤로가기")
     }
 }
