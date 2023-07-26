@@ -1,7 +1,5 @@
 fun main() {
-    val burgerMenu = BurgerMenu()
-    val custardMenu = ForzenCustardMenu()
-    var selectedMenu: Int
+    val menu = Menu()
 
     while (true) {
         println("[ SHAKESHACK MENU ]")
@@ -11,8 +9,7 @@ fun main() {
         println("4. Beer            | 뉴욕 브루클린 브루어리에서 양조한 맥주")
         println("0. 종료            | 프로그램 종료")
 
-        print("메뉴를 선택해주세요: ")
-        selectedMenu = readLine()?.toIntOrNull() ?: -1
+        val selectedMenu = menu.selectMenu(listOf("Burgers", "Forzen Custard"))
 
         when (selectedMenu) {
             0 -> {
@@ -20,48 +17,50 @@ fun main() {
                 break
             }
             1 -> {
-                burgerMenu.showMenu()
+                menu.showMenu(menu.burgerMenu)
 
                 var selectedBurger: Int
                 while (true) {
-                    print("메뉴를 선택해주세요: ")
-                    selectedBurger = readLine()?.toIntOrNull() ?: -1
-
+                    selectedBurger = menu.selectMenu(menu.burgerMenu)
                     when (selectedBurger) {
                         0 -> break
-                        in 1..4 -> {
-                            println("${burgerMenu.menuMap[selectedBurger]}을(를) 선택하셨습니다.")
-                            // 여기에서 선택한 버거 메뉴에 대한 처리를 추가할 수 있습니다.
+                        in 1..menu.burgerMenu.size -> {
+                            println("${menu.burgerMenu[selectedBurger - 1]}을(를) 선택하셨습니다.")
+                            // 여기에서 선택한 버거 메뉴에 대한 처리를 추가.
                         }
                         else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
                     }
                 }
             }
             2 -> {
-                custardMenu.showMenu()
+                menu.showMenu(menu.custardMenu)
 
                 var selectedCustard: Int
                 while (true) {
-                    print("메뉴를 선택해주세요: ")
-                    selectedCustard = readLine()?.toIntOrNull() ?: -1
-
+                    selectedCustard = menu.selectMenu(menu.custardMenu)
                     when (selectedCustard) {
                         0 -> break
-                        in 1..4 -> {
-                            println("${custardMenu.custardMap[selectedCustard]}을(를) 선택하셨습니다.")
-                            // 여기에서 선택한 커스타드 메뉴에 대한 처리를 추가할 수 있습니다.
+                        in 1..menu.custardMenu.size -> {
+                            println("${menu.custardMenu[selectedCustard - 1]}을(를) 선택하셨습니다.")
                         }
                         else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
                     }
                 }
             }
             3 -> {
-                println("Drinks 메뉴를 선택했습니다.")
-                // Drinks 메뉴에 대한 처리를 추가할 수 있습니다.
-            }
-            4 -> {
-                println("Beer 메뉴를 선택했습니다.")
-                // Beer 메뉴에 대한 처리를 추가할 수 있습니다.
+                menu.showMenu(menu.drinksMenu)
+
+                var selecteddrinks: Int
+                while (true) {
+                    selecteddrinks = menu.selectMenu(menu.drinksMenu)
+                    when (selecteddrinks) {
+                        0 -> break
+                        in 1..menu.drinksMenu.size -> {
+                            println("${menu.drinksMenu[selecteddrinks - 1]}을(를) 선택하셨습니다.")
+                        }
+                        else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
+                    }
+                }
             }
             else -> println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
         }
