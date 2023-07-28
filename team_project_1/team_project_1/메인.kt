@@ -62,7 +62,17 @@ fun main() {
                 }
             }
             4 -> {
-                // 이전 코드와 동일 (Beer 메뉴 처리)
+                menu.showMenu(menu.menuItems.filterIsInstance<Beer>())
+                while (true) {
+                    val selectedBeer = menu.selectMenu(menu.menuItems.filterIsInstance<Beer>())
+                    if (selectedBeer == 0) break
+                    if (selectedBeer in 1..menu.menuItems.filterIsInstance<Beer>().size) {
+                        val Beer = menu.menuItems.filterIsInstance<Drink>()[selectedBeer - 1]
+                        order.addItem(Beer, paymentManager)
+                    } else {
+                        println("유효하지 않은 메뉴 번호입니다. 다시 선택해주세요.")
+                    }
+                }
             }
             5 -> {
                 order.checkOut(paymentManager) // 주문 확인 및 결제 처리

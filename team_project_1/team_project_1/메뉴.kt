@@ -17,7 +17,10 @@ class Menu {
         Drink("Lemonade", BigDecimal("5000"), "매장에서 직접 만드는 상큼한 레몬에이드"),
         Drink("Fountain Soda", BigDecimal("3600"), "코카콜라, 코카콜라 제로, 스프라이트, 환타 오렌지, 환타 그레이프, 환타 파인애플"),
         Drink("Abita Root Beer", BigDecimal("4800"), "청량감 있는 독특한 미국식 무알콜 탄산음료"),
-        Drink("Hot Tea", BigDecimal("3400"), "보성 유기농 찻잎을 우려낸 녹차, 홍차, 페퍼민트 & 레몬그라스")
+        Drink("Hot Tea", BigDecimal("3400"), "보성 유기농 찻잎을 우려낸 녹차, 홍차, 페퍼민트 & 레몬그라스"),
+
+        Beer("ShackMeister Ale", BigDecimal("9800"), "쉐이크쉑 버거를 위해뉴욕 브루클린 브루머리에서 특별히 양조한 에일 맥주"),
+        Beer("Magpie Brewing co.", BigDecimal("6800"), "Pale Ale, Dreft"),
     )
 
     fun showMenu(menuList: List<MenuItem>): Unit {
